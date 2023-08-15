@@ -1,0 +1,56 @@
+import {BrowserRouter, Routes, Route, Navigate}  from 'react-router-dom'
+
+// CSS
+import './App.css'
+
+// Pages
+import Home from './pages/Home/Home'
+import Login from './pages/Auth/Login';
+import Register from './pages/Auth/Register';
+import Profile from './pages/Profile/Profile';
+import ResetPassword from './pages/ResetPassword/ResetPassword';
+
+// Components
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+
+// Hooks
+import { useAuth } from './hooks/useAuth';
+import EditProfile from './pages/EditProfile/EditProfile';
+import Photo from './pages/Photo/Photo';
+import Search from './pages/Search/Search';
+
+
+
+
+function App() {
+  const {auth, loading} = useAuth()
+
+  if(loading){
+    return <p>Carregando</p>
+  }
+
+
+  return (
+    <div className="App">
+     <BrowserRouter>
+       <Navbar />
+       <div className="container">
+        <Routes>
+          <Route path='/' element={auth ? <Home /> : <Navigate to='/login' />} />
+          <Route path='/login' element={!auth ? <Login /> : <Navigate to='/' /> } />
+          <Route path='/register' element={!auth ? <Register /> : <Navigate to='/' /> } />
+          <Route path='/profile' element={auth ? <EditProfile /> : <Navigate to='/login' />} />
+          <Route path='/users/:id' element={auth ? <Profile /> : <Navigate to='/login' />} />
+          <Route path='/photos/:id' element={auth ? <Photo /> : <Navigate to='/login' />} />
+          <Route path='/search' element={auth ? <Search /> : <Navigate to='/login' />} />
+          <Route path='/reset-password' element={<ResetPassword />} />
+        </Routes>
+       </div>
+        <Footer />
+     </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;

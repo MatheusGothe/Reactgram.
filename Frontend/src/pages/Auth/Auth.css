@@ -1,0 +1,160 @@
+#login,
+#register {
+    border: 1px solid #363636;
+    background-color: #000;
+    padding: 1.5em 2em;
+    max-width: 33%;
+    margin: 2em auto;
+}
+
+.input-container {
+  position: relative;
+}
+
+.show-password {
+  position: absolute;
+  top: 50%;
+  margin-top: 17px;
+  right: 0.5em;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 4;
+}
+
+#login h2,
+#register h2{
+    text-align: center;
+    font-size: 2.1em;
+    margin-top: 0;
+}
+
+.subtitle{
+    font-weight: bold;
+    color: #999;
+    margin-bottom: 1.5em;
+}
+
+#login form,
+#register form {
+    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid #363636;
+}
+
+#login p,
+#register p{
+    text-align: center;
+}
+
+#login p a,
+#register p a {
+    font-weight: bold;
+    color: #0094f6;
+}
+
+#login input[type="text"],
+#login input[type="password"] {
+  padding-left: 40px;
+  position: relative;
+  margin-bottom: 1em;
+  z-index: 1;
+}
+
+#login .icon {
+  position: relative;
+  top: 28px;
+  left: 10px;
+  font-size: 20px;
+  color: #999;
+  z-index: 2;
+}
+ #register .input{
+  padding-left: 40px;
+  position: relative;
+  margin-bottom: 1em;
+  z-index: 1;
+} 
+
+#register .icon{
+  position: relative;
+  top: 28px;
+  left: 10px;
+  font-size: 20px;
+  color: #999;
+  z-index: 2;
+}
+
+#login form p .link{  
+  color: rgb(89, 0, 255);
+}
+
+#botaoSenha{
+  background-color: red;
+}
+
+@media (max-width: 400px) {
+  #login,
+  #register {
+    max-width: 100%;
+  }
+
+  #login input[type="text"],
+  #login input[type="password"] {
+    padding-left: 30px;
+  }
+
+  .input-icon .icon,
+  #login .icon,
+  #login input[type="text"]:before,
+  #login input[type="password"]:before {
+    font-size: 16px;
+  }
+
+  #login input[type="submit"]{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .show-password {
+    margin-right: -10px;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    #login,
+    #register {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  
+    #login,
+    #register {
+      padding: 1em;
+      border: none;
+    }
+  
+    #login h2,
+    #register h2 {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+    }
+  
+    .subtitle {
+      font-size: 0.8em;
+      margin-bottom: 1em;
+    }
+  
+    #login form,
+    #register form {
+      margin-bottom: 1em;
+    }
+  
+    #login p,
+    #register p {
+      font-size: 0.8em;
+    }
+  }
